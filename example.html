@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+		.block{
+			position: absolute;
+			width: 33px;
+			height: 33px;
+			background: url(twitter.png);
+		}
+		</style>
+	</head>
+	<body>
+		<div class="block block1"></div>
+		<div class="block block2"></div>
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/jquerykeyframes/jquery.keyframes.js"></script>
+		<script src="keyframes.pathfinder.js"></script>
+		<script>
+
+			var rules1 = {
+				name: 'curvey'
+			};
+
+			var rules2 = {
+				name: 'curveyplus'
+			};
+
+			$.keyframe.pathfinderOpts.bezierSteps = 100;
+			rules1 = $.keyframe.bezierPath(rules1, [1,1], [800,1], [400,600]);
+
+			/* Bird 2 uses a 4th coordinate */
+			rules2 = $.keyframe.bezierPath(rules2, [1,100], [800,100], [400,-100], [50, 600]);
+
+			$.keyframe.define([rules1, rules2]);
+
+			$(window).load(function(){
+				$('.block1').playKeyframe('curvey 10000 linear 0 infinite normal forwards');
+				$('.block2').playKeyframe('curveyplus 10000 linear 0 infinite normal forwards');
+			});
+
+		</script>
+	</body>
+</html>

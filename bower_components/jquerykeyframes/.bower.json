@@ -1,0 +1,23 @@
+{
+  "name": "jQueryKeyframes",
+  "homepage": "https://github.com/krazyjakee/jQuery.Keyframes",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "_release": "440ca936c1",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "440ca936c136cf70b240b0c3ddd0c3a76f246c0d"
+  },
+  "_source": "git://github.com/krazyjakee/jQuery.Keyframes.git",
+  "_target": "*",
+  "_originalSource": "jquerykeyframes"
+}
