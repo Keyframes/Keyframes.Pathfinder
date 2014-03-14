@@ -22,7 +22,7 @@
       var points = {};
       var step = 1 / opts.bezierSteps;
 
-      for (var i = 0; i <= 1; i += step){
+      for (var i = 0; i <= 1.01; i += step){
         var newpos = getBezier(i, p1, p4, p3, p2);
         points[ (100 - Math.round(i * 100)) + '%' ] = { 'transform': 'translate(' + newpos.x + 'px,' + newpos.y + 'px)' };
       }
