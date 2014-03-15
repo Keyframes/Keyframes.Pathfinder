@@ -41,15 +41,15 @@
 
       for (var i = 0; i <= opts.circleSteps; i += step){
         var degree = (360 / opts.circleSteps) * i;
-        var newpos = getCirclePoint(degree, radius, center);
+        var radians = degree * (Math.PI / 180);
+        var newpos = getCirclePoint(radians, radius, center);
         points[ Math.round(i) + '%' ] = { 'transform': 'translate(' + newpos.x + 'px,' + newpos.y + 'px)' };
       }
       return $.extend(kfro, points);
     }
   });
 
-  function getCirclePoint(degree, radius, center) {
-    var radians = degree * (Math.PI / 180);
+  function getCirclePoint(radians, radius, center) {
     return {
         x: (center.x + radius * Math.cos(radians)),
         y: (center.y + radius * Math.sin(radians))
