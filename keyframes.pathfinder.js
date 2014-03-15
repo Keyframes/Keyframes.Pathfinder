@@ -4,7 +4,8 @@
   $.keyframe = $.extend($.keyframe, {
 
     pathfinderOpts: {
-      bezierSteps: 100
+      bezierSteps: 100,
+      circleSteps: 100
     },
 
     bezierPath: function(kfro, p1, p2, p3, p4){
@@ -29,8 +30,31 @@
 
       return $.extend(kfro, points);
 
+    },
+
+    circlePath: function(kfro, center, radius){
+      var opts = $.keyframe.pathfinderOpts;
+
+      center = coord(center[0],center[1]);
+      var step = 100 / opts.circleSteps;
+      var points = {};
+
+      for (var i = 0; i <= opts.circleSteps; i += step){
+        var degree = (360 / opts.circleSteps) * i;
+        var newpos = getCirclePoint(degree, radius, center);
+        points[ Math.round(i) + '%' ] = { 'transform': 'translate(' + newpos.x + 'px,' + newpos.y + 'px)' };
+      }
+      return $.extend(kfro, points);
     }
   });
+
+  function getCirclePoint(degree, radius, center) {
+    var radians = degree * (Math.PI / 180);
+    return {
+        x: (center.x + radius * Math.cos(radians)),
+        y: (center.y + radius * Math.sin(radians))
+    }
+  }
 
   //====================================\\
   // 13thParallel.org Beziér Curve Code \\

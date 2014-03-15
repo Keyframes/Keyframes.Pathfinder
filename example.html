@@ -13,6 +13,7 @@
 	<body>
 		<div class="block block1"></div>
 		<div class="block block2"></div>
+		<div class="block block3"></div>
 		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/jquerykeyframes/jquery.keyframes.js"></script>
 		<script src="keyframes.pathfinder.js"></script>
@@ -26,17 +27,27 @@
 				name: 'curveyplus'
 			};
 
+			var rules3 = {
+				name: 'circular'
+			};
+
 			$.keyframe.pathfinderOpts.bezierSteps = 100;
-			rules1 = $.keyframe.bezierPath(rules1, [1,1], [800,1], [400,600]);
+
+			/* Bird 1 uses a simple bezier path */
+			rules1 = $.keyframe.bezierPath(rules1, [-50,1], [800,1], [400,600]);
 
 			/* Bird 2 uses a 4th coordinate */
-			rules2 = $.keyframe.bezierPath(rules2, [1,100], [800,100], [400,-100], [50, 600]);
+			rules2 = $.keyframe.bezierPath(rules2, [-50,100], [800,100], [400,-100], [50, 600]);
 
-			$.keyframe.define([rules1, rules2]);
+			/* Bird 3 uses a circle path */
+			rules3 = $.keyframe.circlePath(rules3, [100, 100], 40);
+
+			$.keyframe.define([rules1, rules2, rules3]);
 
 			$(window).load(function(){
 				$('.block1').playKeyframe('curvey 10000 linear 0 infinite normal forwards');
 				$('.block2').playKeyframe('curveyplus 10000 linear 0 infinite normal forwards');
+				$('.block3').playKeyframe('circular 5000 linear 0 infinite normal forwards');
 			});
 
 		</script>
