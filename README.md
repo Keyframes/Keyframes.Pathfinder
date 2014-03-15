@@ -34,6 +34,7 @@ $(window).load(function()
 
 ## Circular Paths
 ![](http://img19.imageshack.us/img19/8696/lp4r.png)
+
 ```$.keyframe.circlePath( rules, [centerX, centerY], radius);```
 
 Simple Example:
