@@ -50,5 +50,6 @@ $(window).load(function()
 
 By default the paths are set to 100 steps, but you can change them to suit your needs...
 ```javascript
-$.keyframe.pathfinderOpts.bezierSteps = 10;
+$.keyframe.pathfinderOpts.bezierSteps = 100;
+$.keyframe.pathfinderOpts.circleSteps = 100;
 ```
