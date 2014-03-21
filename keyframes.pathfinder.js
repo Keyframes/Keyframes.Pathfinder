@@ -48,6 +48,20 @@
         var newpos = getCirclePoint(radians, radius, center);
         points[ Math.round(step * i) + '%' ] = { 'transform': 'translate(' + newpos.x + 'px,' + newpos.y + 'px)' };
       }
+
+      for(step in kfro){
+        var rules = kfro[step];
+        for(newstep in points){
+          var newrules = points[newstep];
+          if(step == newstep){
+            if(newrules.transform && rules.transform){
+              points[newstep].transform = newrules.transform + ' ' + rules.transform;
+              break;
+            }
+          }
+        }
+      }
+
       return $.extend(kfro, points);
     }
   });
