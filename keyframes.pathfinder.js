@@ -36,14 +36,17 @@
       var opts = $.keyframe.pathfinderOpts;
 
       center = coord(center[0],center[1]);
-      var step = 100 / opts.circleSteps;
       var points = {};
-
-      for (var i = 0; i <= opts.circleSteps; i += step){
-        var degree = (360 / opts.circleSteps) * i;
-        var radians = degree * (Math.PI / 180);
+      var pieandahalf = 1.5 * Math.PI;
+      var notmuchpie = Math.PI / 180;
+      var step = 100 / opts.circleSteps;
+      var degreestep = 360 / opts.circleSteps;
+      
+      for (var i = 0; i <= opts.circleSteps; ++i){
+        var degree = degreestep * i;
+        var radians = pieandahalf + degree * notmuchpie;
         var newpos = getCirclePoint(radians, radius, center);
-        points[ Math.round(i) + '%' ] = { 'transform': 'translate(' + newpos.x + 'px,' + newpos.y + 'px)' };
+        points[ Math.round(step * i) + '%' ] = { 'transform': 'translate(' + newpos.x + 'px,' + newpos.y + 'px)' };
       }
       return $.extend(kfro, points);
     }
