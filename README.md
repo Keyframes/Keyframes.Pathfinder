@@ -53,3 +53,7 @@ By default the paths are set to 100 steps, but you can change them to suit your 
 $.keyframe.pathfinderOpts.bezierSteps = 100;
 $.keyframe.pathfinderOpts.circleSteps = 100;
 ```
+
+## Toys
+
+http://jsfiddle.net/krazyjakee/N652c/ - Bubbles in space game.
