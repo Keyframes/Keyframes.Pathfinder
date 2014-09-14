@@ -13,7 +13,7 @@ Super simple example:
 var rules = $.keyframe.bezierPath( { name: 'curvy' } , [1,1], [400,1], [200,300] );
 $.keyframe.define([rules]);
 $(window).load(function(){
-  $('.block').playKeyframe('curvey 5000 ease 0 1 normal forwards');
+  $('.block').playKeyframe('curvey 5s ease 0 1 normal forwards');
 });
 ```
 
@@ -28,7 +28,7 @@ Simple example:
 var rules = $.keyframe.bezierPath( { name: 'curvyplus' }, [1,100], [800,100], [400,-100], [50, 600]);
 $.keyframe.define([rules]);
 $(window).load(function()
-  $('.block').playKeyframe('curveyplus 5000 ease 0 1 normal forwards');
+  $('.block').playKeyframe('curveyplus 5s ease 0 1');
 });
 ```
 
@@ -42,7 +42,7 @@ Simple Example:
 var rules = $.keyframe.circlePath( { name: 'circular' }, [100, 100], 40);
 $.keyframe.define([rules]);
 $(window).load(function()
-  $('.block').playKeyframe('circular 5000 linear 0 infinite normal forwards');
+  $('.block').playKeyframe('circular 5s linear 0 infinite');
 });
 ```
 
