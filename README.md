@@ -35,7 +35,6 @@ $(window).load(function() {
 ```
 
 ## Circular Paths
-![](http://img19.imageshack.us/img19/8696/lp4r.png)
 
 ```Keyframes.circlePath( rules, [centerX, centerY], radius);```
 
@@ -43,8 +42,9 @@ Simple Example:
 ```javascript
 var rules = Keyframes.circlePath( { name: 'circular' }, [100, 100], 40);
 Keyframes.define([rules]);
-$(window).load(function()
-  $('.block').playKeyframe('circular 5s linear 0 infinite');
+$(window).load(function() {
+  const block = document.querySelectorAll('.block1')[0];
+  block.play('circular 5s linear 0 infinite');
 });
 ```
 
