@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+		.block{
+			position: absolute;
+			width: 33px;
+			height: 33px;
+			background: url(twitter.png);
+		}
+		</style>
+	</head>
+	<body>
+		<div class="block block1"></div>
+		<div class="block block2"></div>
+		<div class="block block3"></div>
+		<script src="../node_modules/@keyframes/core/dist/keyframes.js"></script>
+		<script src="../dist/keyframes.pathfinder.js"></script>
+		<script>
+
+			var rules1 = {
+				name: 'curvey'
+			};
+
+			var rules2 = {
+				name: 'curveyplus'
+			};
+
+			var rules3 = {
+				name: 'circular'
+			};
+
+			Keyframes.pathfinderOpts.bezierSteps = 100;
+
+			/* Bird 1 uses a simple bezier path */
+			rules1 = Keyframes.bezierPath(rules1, [-50,1], [800,1], [400,600]);
+
+			/* Bird 2 uses a 4th coordinate */
+			rules2 = Keyframes.bezierPath(rules2, [-50,100], [800,100], [400,-100], [50, 600]);
+
+			/* Bird 3 uses a circle path */
+			rules3 = Keyframes.circlePath(rules3, [100, 100], 40);
+
+			Keyframes.define([rules1, rules2, rules3]);
+
+			window.onload = function(){
+				var b1 = new Keyframes(document.querySelectorAll('.block1')[0]);
+				var b2 = new Keyframes(document.querySelectorAll('.block2')[0]);
+				var b3 = new Keyframes(document.querySelectorAll('.block3')[0]);
+				b1.play('curvey 10s linear 0s infinite');
+				b2.play('curveyplus 10s linear 0s infinite');
+				b3.play('circular 5s linear 0s infinite');
+			};
+
+		</script>
+	</body>
+</html>

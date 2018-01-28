@@ -1,0 +1,39 @@
+{
+  "name": "@keyframes/pathfinder",
+  "version": "1.0.0",
+  "description": "A plugin for Keyframes that generates complex movement paths.",
+  "main": "dist/keyframes.pathfinder.min.js",
+  "scripts": {
+    "build": "npx babel src -d dist --no-comments && npm run minify",
+    "minify": "uglifyjs --compress --mangle -- dist/keyframes.pathfinder.js > dist/keyframes.pathfinder.min.js",
+    "publish": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Keyframes/Keyframes.Pathfinder.git"
+  },
+  "keywords": [
+    "animation",
+    "keyframes",
+    "css3",
+    "bezier"
+  ],
+  "author": "krazyjakee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Keyframes/Keyframes.Pathfinder/issues"
+  },
+  "homepage": "https://github.com/Keyframes/Keyframes.Pathfinder",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.38",
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38",
+    "@keyframes/core": "^1.0.1",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.0",
+    "uglify-js": "^3.3.5"
+  }
+}
