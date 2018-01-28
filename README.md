@@ -4,7 +4,7 @@ Keyframes.Pathfinder
 This plugin for Keyframes generates complex movement paths.
 
 ## Simple Bezier Curve
-![](http://i.imgur.com/8rwTSrv.png)
+![](https://raw.githubusercontent.com/Keyframes/Keyframes.Pathfinder/6c225cfb/screenshots/a.png)
 
 ```Keyframes.bezierPath( rules, [startX,startY], [endX,endY], [pullX,pullY] );```
 
@@ -20,7 +20,7 @@ $(window).load(function(){
 
 ## Advanced Bezier Curve
 
-![](http://i.imgur.com/QJ8ewHu.png)
+![](https://raw.githubusercontent.com/Keyframes/Keyframes.Pathfinder/6c225cfb/screenshots/b.png)
 
 ```Keyframes.bezierPath( rules, [startX,startY], [endX,endY], [pull1X,pull1Y], [pull2X,pull2Y] );```
 
