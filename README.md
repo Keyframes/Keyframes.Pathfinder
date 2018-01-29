@@ -12,10 +12,10 @@ Super simple example:
 ```javascript
 var rules = Keyframes.bezierPath( { name: 'curvy' } , [1,1], [400,1], [200,300] );
 Keyframes.define([rules]);
-$(window).load(function(){
+window.onload = () => {
   const block = document.querySelectorAll('.block1')[0];
   block.play('curvey 5s ease 0 1 normal forwards');
-});
+};
 ```
 
 ## Advanced Bezier Curve
@@ -28,10 +28,10 @@ Simple example:
 ```javascript
 var rules = Keyframes.bezierPath( { name: 'curvyplus' }, [1,100], [800,100], [400,-100], [50, 600]);
 Keyframes.define([rules]);
-$(window).load(function() {
+window.onload = () => {
   const block = document.querySelectorAll('.block1')[0];
   block.play('curveyplus 5s ease 0 1');
-});
+};
 ```
 
 ## Circular Paths
@@ -42,10 +42,10 @@ Simple Example:
 ```javascript
 var rules = Keyframes.circlePath( { name: 'circular' }, [100, 100], 40);
 Keyframes.define([rules]);
-$(window).load(function() {
+window.onload = () => {
   const block = document.querySelectorAll('.block1')[0];
   block.play('circular 5s linear 0 infinite');
-});
+};
 ```
 
 ## Options

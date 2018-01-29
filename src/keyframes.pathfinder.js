@@ -1,5 +1,5 @@
 /* global Keyframes */
-(() => {
+export default () => {
     function getCirclePoint(radians, radius, center) {
         return {
             x: (center.x + radius * Math.cos(radians)),
@@ -87,4 +87,4 @@
         bezierSteps: 100,
         circleSteps: 100,
     };
-})();
+};
