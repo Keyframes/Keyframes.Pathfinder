@@ -1,8 +1,15 @@
 {
   "name": "@keyframes/pathfinder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A plugin for Keyframes that generates complex movement paths.",
-  "main": "src/keyframes.pathfinder.min.js",
+  "main": "src/keyframes.pathfinder.js",
+  "scripts": {
+    "build": "npm run es6 && npm run browserify && npm run cleanup",
+    "es6": "babel example/example.js -o example/example.es6.js --source-type=module --no-comments",
+    "browserify": "browserify example/example.es6.js -o example/example.dist.js -t [ babelify --presets [ @babel/preset-env ] ]",
+    "cleanup": "rm example/example.es6.js",
+    "versions": "babel --version && browserify --version && node --version"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Keyframes/Keyframes.Pathfinder.git"
@@ -19,7 +26,14 @@
     "url": "https://github.com/Keyframes/Keyframes.Pathfinder/issues"
   },
   "homepage": "https://github.com/Keyframes/Keyframes.Pathfinder",
+  "dependencies": {
+    "@keyframes/core": "^1.0.4"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.38",
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38",
+    "babelify": "github:ylemkimon/babelify",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
