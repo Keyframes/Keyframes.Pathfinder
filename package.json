@@ -5,8 +5,8 @@
   "main": "src/keyframes.pathfinder.js",
   "scripts": {
     "build": "npm run es6 && npm run browserify && npm run cleanup",
-    "es6": "babel example/example.js -o example/example.es6.js --source-type=module --no-comments",
-    "browserify": "browserify example/example.es6.js -o example/example.dist.js -t [ babelify --presets [ @babel/preset-env ] ]",
+    "es6": "babel example/example.js -o example/example.es6.js --no-comments",
+    "browserify": "browserify example/example.es6.js -o example/example.dist.js -t [ babelify --global --presets [ @babel/preset-env ] ]",
     "cleanup": "rm example/example.es6.js",
     "versions": "babel --version && browserify --version && node --version"
   },
