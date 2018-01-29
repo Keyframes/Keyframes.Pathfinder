@@ -3,6 +3,17 @@ Keyframes.Pathfinder
 
 This plugin for Keyframes generates complex movement paths.
 
+Installation
+-----
+
+```javascript
+import Pathfinder from '@keyframes/pathfinder';
+Keyframes.plugin(Pathfinder);
+```
+
+Usage
+-----
+
 ## Simple Bezier Curve
 ![](https://raw.githubusercontent.com/Keyframes/Keyframes.Pathfinder/6c225cfb/screenshots/a.png)
 
