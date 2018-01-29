@@ -1,5 +1,4 @@
-/* global Keyframes */
-export default () => {
+export default (Keyframes) => {
     function getCirclePoint(radians, radius, center) {
         return {
             x: (center.x + radius * Math.cos(radians)),

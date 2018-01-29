@@ -1,7 +1,7 @@
 import Keyframes from '@keyframes/core';
 import Pathfinder from '../src/keyframes.pathfinder';
 
-Keyframes.addPlugin(Pathfinder);
+Keyframes.plugin(Pathfinder);
 
 let rules1 = {
     name: 'curvey',

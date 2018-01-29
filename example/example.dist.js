@@ -11,7 +11,7 @@ function _interopRequireDefault(obj) {
   };
 }
 
-_core.default.addPlugin(_keyframes.default);
+_core.default.plugin(_keyframes.default);
 
 var rules1 = {
   name: 'curvey'
@@ -189,7 +189,7 @@ function () {
   }, {
     key: "plugin",
     value: function plugin(pluginFunc) {
-      pluginFunc();
+      pluginFunc(Keyframes);
     }
   }]);
 
@@ -206,8 +206,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-/* global Keyframes */
-var _default = function _default() {
+var _default = function _default(Keyframes) {
   function getCirclePoint(radians, radius, center) {
     return {
       x: center.x + radius * Math.cos(radians),
