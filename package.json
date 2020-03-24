@@ -1,6 +1,6 @@
 {
   "name": "@keyframes/pathfinder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A plugin for Keyframes that generates complex movement paths.",
   "main": "src/keyframes.pathfinder.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "@keyframes/core": "^1.1.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0",
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "babelify": "^10.0.0",
